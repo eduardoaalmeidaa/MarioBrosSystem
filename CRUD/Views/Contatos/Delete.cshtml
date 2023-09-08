@@ -1,0 +1,123 @@
+﻿@model CRUD.Models.Contatos
+
+@{
+    ViewData["Title"] = "Apagar";
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #0064b8;
+            font-family: Verdana;
+            margin: 0;
+            padding: 0;
+        }
+
+        .custom-container {
+            background-color: #343a40;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        h1.display-4 {
+            font-size: 14px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .col-md-6 {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+
+        th, td {
+            border: 1px solid #0064b8;
+            text-align: left;
+            padding: 8px;
+            background-color: white;
+        }
+
+        th {
+            background-color: #0064b8;
+            color: black;
+        }
+
+        .row {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 2px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="custom-container">
+        <div class="text-center">
+            <h1 class="display-4">CONFIRMA EXCLUSÃO ?</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <br />
+
+            <table>
+                <tr>
+                    <th class="col-sm-2">Nome</th>
+                    <td class="col-sm-10">@Html.DisplayFor(model => model.Nome)</td>
+
+                </tr>
+
+                <tr>
+                    <th class="col-sm-2">Email</th>
+                    <td class="col-sm-10">@Html.DisplayFor(model => model.Email)</td>
+                </tr>
+
+                <tr>
+                    <th class="col-sm-2">Telefone</th>
+                    <td class="col-sm-10">@Html.DisplayFor(model => model.Telefone)</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <form asp-action="Delete">
+        <div class="row">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Apagar" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-dark mb-2">Voltar</a>
+        </div>
+    </form>
+
+</body>
+</html>

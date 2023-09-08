@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Página Principal";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            background-image: url('/css/mario.gif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center 30%;
+        }
+
+        .custom-container {
+            background-color: black;
+            padding: 40px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        h1.display-4 {
+            font-size: 36px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .btn-ini {
+            color: #0064b8;
+            background-color: transparent;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+            .btn-ini:hover {
+                color: white;
+                background-color: #0064b8;
+            }
+    </style>
+</head>
+<body>
+    <div class="custom-container">
+        <div class="text-center">
+            <h1 class="display-4">Bem-Vindo(a)</h1>
+            <a asp-controller="Contatos" asp-action="Index" class="btn btn-ini">Agenda</a>
+        </div>
+    </div>
+    <link rel="stylesheet" type="text/css" href="/css/mario.gif">
+</body>
+</html>

@@ -1,0 +1,109 @@
+﻿@model CRUD.Models.Contatos
+
+@{
+    ViewData["Title"] = "Alterar";
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #0064b8;
+            font-family: Verdana;
+            margin: 0;
+            padding: 0;
+        }
+
+        .custom-container {
+            background-color: #343a40;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        h1.display-4 {
+            font-size: 14px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .col-md-6 {
+            background-color: #0064b8;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .row {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 2px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="custom-container">
+        <div class="text-center">
+            <h1 class="display-4">ALTERAR</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <div class="form-group">
+                    <label asp-for="Nome"></label>
+                    <input asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Telefone"></label>
+                    <input asp-for="Telefone" class="form-control" />
+                    <span asp-validation-for="Telefone" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-dark">Salvar</button>
+                    <a asp-action="Index" class="btn btn-dark">Voltar</a>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
